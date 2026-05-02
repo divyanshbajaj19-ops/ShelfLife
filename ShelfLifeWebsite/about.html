@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Shelf-Life</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "on-secondary-fixed": "#00210a",
+                    "on-background": "#161d16",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#76231b",
+                    "on-secondary-fixed-variant": "#005323",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#edf6ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3d4a3d",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#4ae176",
+                    "surface-bright": "#f3fcef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2ebde",
+                    "on-primary-fixed-variant": "#005321",
+                    "inverse-surface": "#2a322a",
+                    "surface-container": "#e8f0e4",
+                    "primary": "#006e2f",
+                    "tertiary": "#9e4036",
+                    "surface": "#f3fcef",
+                    "secondary-container": "#92f5a4",
+                    "on-secondary-container": "#007233",
+                    "on-surface": "#161d16",
+                    "primary-fixed": "#6bff8f",
+                    "background": "#f3fcef",
+                    "primary-fixed-dim": "#4ae176",
+                    "on-primary-container": "#004b1e",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#006e2f",
+                    "primary-container": "#22c55e",
+                    "secondary": "#006d30",
+                    "on-primary-fixed": "#002109",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4ddd0",
+                    "on-tertiary-fixed": "#410001",
+                    "outline": "#6d7b6c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bccbb9",
+                    "inverse-on-surface": "#ebf3e7",
+                    "secondary-fixed": "#95f8a7",
+                    "surface-container-highest": "#dce5d9",
+                    "secondary-fixed-dim": "#79db8d",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-variant": "#dce5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "card-gap": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Be Vietnam Pro"],
+                    "h3": ["Be Vietnam Pro"],
+                    "h1": ["Be Vietnam Pro"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .shadow-ambient {
+            box-shadow: 0 10px 30px -5px rgba(0, 110, 47, 0.08);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 110, 47, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-white/80 dark:bg-slate-900/80 border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white"><a href="index.html" class="hover:opacity-80 transition-opacity">Shelf-Life</a></div>
+<div class="hidden md:flex items-center gap-8 font-be-vietnam-pro text-sm font-medium tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors" href="index.html">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors" href="features.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors" href="pricing.html">Pricing</a>
+<a class="text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1" href="about.html">About</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="dashboard.html"><button class="hidden md:block text-slate-600 dark:text-slate-400 font-medium hover:text-green-600 transition-colors active:scale-95 duration-200">Login</button></a>
+<a href="dashboard.html"><button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold shadow-lg shadow-green-500/20 active:scale-95 duration-200">Sign Up</button></a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section: The Crisis -->
+<section class="relative w-full py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps mb-6">OUR MISSION</span>
+<h1 class="font-h1 text-[48px] md:text-[64px] leading-[1.1] mb-8 text-on-background">
+                        Solving the <span class="text-primary italic">₹1 Lakh Crore</span> Food Waste Crisis in India.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10">
+                        Every year, Indian households throw away nearly 68 million tonnes of food. At Shelf-Life, we believe sustainability starts in your pantry, not just in policies.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 p-4 bg-surface-container rounded-2xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<div>
+<p class="font-bold text-on-surface">Smart Logic</p>
+<p class="text-xs text-on-surface-variant">AI-driven tracking</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container rounded-2xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+<div>
+<p class="font-bold text-on-surface">Zero Waste</p>
+<p class="text-xs text-on-surface-variant">Sustainable living</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-square rounded-[48px] overflow-hidden shadow-2xl border-[12px] border-white/50">
+<img class="w-full h-full object-cover" data-alt="A high-end, contemporary Indian kitchen setting featuring bright, natural light streaming through large windows. The scene shows a variety of fresh organic vegetables and pantry staples neatly organized in clear glass containers on a pristine white marble countertop. The overall aesthetic is clean, minimalist, and modern with soft green accents reflecting a premium sustainable lifestyle brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY8letHYrwDlwzrgXLd2mvwnCiAUcaR_viQzXSeqxcs0zlomWKAkXY2EHFBKxBdrIbctfTM_xxzxCMcgVeZpVo8UFezIPBNDPHZ5cfv5iBzU3W9O33fKMv6kTBUC4PqYfmR_4Q-Bk9-zPgURS_cVF6ItpR6z1dqfNaagvCCzIlWEg9xpeNORA6FiYsOu5sBCAQNyUmYGqHE9MyTO7Y5xnkmC6PVm6hrPYPncidzk3Sz7rUxJ3cnC3GTrzrGRS1cJqeW97rYQ8bUw"/>
+</div>
+<div class="absolute -bottom-6 -left-6 p-6 bg-white/90 backdrop-blur-xl rounded-[24px] shadow-ambient border border-white/50 max-w-[240px]">
+<p class="font-h3 text-h3 text-primary">68M</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tonnes of food wasted annually in Indian homes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision Section: Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 mb-4">Vision for the Smart Indian Household</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Digitizing the kitchen inventory to bridge the gap between traditional Indian cooking and modern efficiency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+<!-- Big Bento Item -->
+<div class="md:col-span-2 p-10 bg-white rounded-[32px] border border-outline-variant shadow-ambient card-hover transition-all flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-weight="fill">inventory_2</span>
+<h3 class="font-h3 text-h3 mb-4">The Intelligent Pantry</h3>
+<p class="text-on-surface-variant font-body-lg mb-8">Our vision is to eliminate the 'Forgotten Expiry' syndrome. By integrating IoT and simple scanning, we turn every kitchen into an efficient asset manager.</p>
+</div>
+<img class="w-full h-48 object-cover rounded-2xl" data-alt="A macro shot of a sleek smartphone displaying a minimalist inventory management interface. The screen shows vibrant green icons of groceries like milk, bread, and apples with clear countdown timers for freshness. The background is a blurred, high-end kitchen with wooden textures and soft morning sunlight, emphasizing a tech-integrated household experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBezq0EsUurHxs4nYPpOYueRmd2MOv0UFah7BFU3oHGsV61-LTjfoNki1-QcbfxLOzV_-VMyMKV6n_16MVDTn8sBeL8ZgpblL_eP2AvFA-RypD1qKEYo69uRm5rcsn6vCHWHGixJXI4xpK7XgrEaj00WCR4697nGMDOz5Sj4O_lmRyIVAbgH1o5pmZjqucj15A-rC-sBY7FKpvYHjLxjHXQA0SThgf5Te_hPrdZrnsD7MHR2n7aLy3JySCM9w483vZb1u5yLW1dFQ"/>
+</div>
+<!-- Small Bento Items -->
+<div class="p-8 bg-primary text-white rounded-[32px] flex flex-col justify-center items-center text-center shadow-lg shadow-green-500/20">
+<div class="text-6xl font-black mb-4">80%</div>
+<p class="font-h3 text-h3 leading-tight mb-2">Reduction in Waste</p>
+<p class="text-white/80 font-body-sm">Our target for every active user within their first six months of usage.</p>
+</div>
+<div class="p-8 bg-white rounded-[32px] border border-outline-variant shadow-ambient card-hover transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">local_dining</span>
+<h3 class="font-h3 text-h3 mb-2">Cultural Context</h3>
+<p class="text-on-surface-variant font-body-md">Optimized for Indian kitchens—handling everything from bulk-bought dal to the specific shelf-life of regional masalas.</p>
+</div>
+<div class="md:col-span-2 p-8 bg-surface-container-highest rounded-[32px] flex items-center gap-8 card-hover transition-all">
+<div class="hidden sm:block shrink-0">
+<img class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-md" data-alt="A clean, professional studio shot of various Indian spices and grains arranged in an aesthetic, minimalist grid pattern. Turmeric, cumin, and lentils provide a vibrant palette of yellows and oranges against a neutral grey background, representing the organized diversity of an Indian kitchen managed by smart technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKtS-RMxOzl10u44p1qCvIymMh87HN8g7IHfsUJKYsBeRpgHyPopdDGThw6bvAfCLozmkTBIQOEig7dSlwmIA55RH8FNZxzptdaelxW3ZtN2SZJNE8glS5LRJYX96RM08pxGRzkKNCJ-4yfSj5zgDSOXva5r0yQlTQGwRoYAYDY9woxMUhKm1-WbT8k024Dqg4A9ODj7GZ9ATjoTjtI7DRmjYZbEPC8BHVnHCVCG8vlP_rQqgK6-Or2e-bk6qJVUZSM7fVznDEg"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3 mb-2">Community Impact</h3>
+<p class="text-on-surface-variant font-body-md">Connecting households with surplus food to local charities through an automated donation bridge system.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Story -->
+<!-- Future Roadmap -->
+<section class="py-24 bg-on-background text-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="text-primary-fixed-dim font-label-caps text-label-caps mb-4 block">THE JOURNEY AHEAD</span>
+<h2 class="font-h1 text-h1">The Roadmap to 2030</h2>
+</div>
+<p class="text-surface-variant font-body-md max-w-sm">From smart inventory to a circular food economy—our goals are ambitious and measurable.</p>
+</div>
+<div class="relative">
+<!-- Progress Line -->
+<div class="absolute top-0 left-8 md:left-1/2 md:-translate-x-1/2 w-0.5 h-full bg-white/10"></div>
+<div class="space-y-16 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-16 md:text-right">
+<span class="text-primary-fixed-dim font-bold text-lg">Phase 01: Foundations</span>
+<h3 class="font-h3 text-h3 mt-2">The Inventory Layer</h3>
+<p class="text-surface-variant mt-2">Mastering the art of tracking expiry and quantity for 1 Million households across India's top 10 metros.</p>
+</div>
+<div class="z-10 w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(0,110,47,0.5)] border-4 border-on-background">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="md:w-1/2 md:pl-16"></div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-16"></div>
+<div class="z-10 w-16 h-16 rounded-full bg-secondary flex items-center justify-center shadow-[0_0_20px_rgba(0,109,48,0.5)] border-4 border-on-background">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div class="md:w-1/2 md:pl-16">
+<span class="text-primary-fixed-dim font-bold text-lg">Phase 02: Connectivity</span>
+<h3 class="font-h3 text-h3 mt-2">Smart Procurement</h3>
+<p class="text-surface-variant mt-2">Direct integration with grocery platforms to auto-update stocks and prevent over-buying at the source.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-16 md:text-right">
+<span class="text-primary-fixed-dim font-bold text-lg">Phase 03: Circularity</span>
+<h3 class="font-h3 text-h3 mt-2">Zero-Waste Ecosystem</h3>
+<p class="text-surface-variant mt-2">Launching 'Shelf-Share'—a peer-to-peer network for neighborhood food sharing and automated composting pickups.</p>
+</div>
+<div class="z-10 w-16 h-16 rounded-full bg-surface-container flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] border-4 border-on-background">
+<span class="material-symbols-outlined text-on-background">all_inclusive</span>
+</div>
+<div class="md:w-1/2 md:pl-16"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainability Goals -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-white rounded-[48px] p-12 md:p-20 shadow-ambient border border-outline-variant flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<h2 class="font-h2 text-[40px] mb-6">Our Sustainability Commitments</h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">forest</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Carbon Neutrality</p>
+<p class="text-on-surface-variant text-sm">Targeting carbon-negative operations by 2026 through data-center efficiency and reforestation offsets.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">volunteer_activism</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Donation Efficiency</p>
+<p class="text-on-surface-variant text-sm">Ensuring 100% of usable surplus food tracked on our platform is diverted from landfills to those in need.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">compost</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Circular Design</p>
+<p class="text-on-surface-variant text-sm">Working with Indian hardware startups to design smart composting bins that integrate with the Shelf-Life app.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="md:w-1/2 w-full aspect-video rounded-[32px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A breathtaking landscape of a lush, vibrant green reforestation project in rural India. The image captures hundreds of young saplings planted in neat rows across rolling hills under a soft, golden sunset. The lighting is ethereal and hopeful, symbolizing the long-term environmental commitment of the brand and its positive impact on the planet's ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV5hAdkvWmK6S-z-wb8n9W9ukwc2pBxL8P4i90TLuuKvAO9Cx854X1k37B1fkMDQukzP8g5I9iLYKNYsxo_7tQvUo99l2f_AsrpsKszWFkJVIniWbjANCChPk3BeAQScNtbdTYhjpFx7Q5WQmP4DywbFKhs9lg_xdzqhYOMIeROVW3dswuw-gSYxSAHv3QFKahGmgNF2VMr0OmNs2whVRLoFUg7JbYbwBhgISos2Y-Y7JDR7NjxA2meB44MFs4mK7HgAGTFskuZA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="py-24 text-center">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="font-h1 text-h1 mb-6">Join the Revolution</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Be part of the community that's redefining the Indian kitchen for a sustainable future.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-green-600/30 active:scale-95 transition-all">Download the App</button>
+<button class="bg-white border-2 border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/5 active:scale-95 transition-all">Partner with Us</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-gray-200 dark:border-gray-800 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-slate-900 dark:text-white mb-4"><a href="index.html" class="hover:opacity-80 transition-opacity">Shelf-Life</a></div>
+<p class="font-be-vietnam-pro text-sm text-slate-500 dark:text-slate-400">© 2024 Shelf-Life. Reducing India's food waste, one kitchen at a time.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-on-background">Company</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Partnerships</a></li>
+<li><a class="text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Support</a></li>
+<li><a class="text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">WhatsApp Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-on-background">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-on-background">Social</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface">group</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

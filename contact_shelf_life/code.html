@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "on-secondary-fixed": "#00210a",
+                    "on-background": "#161d16",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#76231b",
+                    "on-secondary-fixed-variant": "#005323",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#edf6ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3d4a3d",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#4ae176",
+                    "surface-bright": "#f3fcef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2ebde",
+                    "on-primary-fixed-variant": "#005321",
+                    "inverse-surface": "#2a322a",
+                    "surface-container": "#e8f0e4",
+                    "primary": "#006e2f",
+                    "tertiary": "#9e4036",
+                    "surface": "#f3fcef",
+                    "secondary-container": "#92f5a4",
+                    "on-secondary-container": "#007233",
+                    "on-surface": "#161d16",
+                    "primary-fixed": "#6bff8f",
+                    "background": "#f3fcef",
+                    "primary-fixed-dim": "#4ae176",
+                    "on-primary-container": "#004b1e",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#006e2f",
+                    "primary-container": "#22c55e",
+                    "secondary": "#006d30",
+                    "on-primary-fixed": "#002109",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4ddd0",
+                    "on-tertiary-fixed": "#410001",
+                    "outline": "#6d7b6c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bccbb9",
+                    "inverse-on-surface": "#ebf3e7",
+                    "secondary-fixed": "#95f8a7",
+                    "surface-container-highest": "#dce5d9",
+                    "secondary-fixed-dim": "#79db8d",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-variant": "#dce5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "card-gap": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Be Vietnam Pro"],
+                    "h3": ["Be Vietnam Pro"],
+                    "h1": ["Be Vietnam Pro"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .card-shadow {
+        box-shadow: 0 10px 30px -5px rgba(34, 197, 94, 0.15);
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.25);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 border-b border-white/20 glass-nav shadow-sm">
+<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-black tracking-tighter text-slate-900">Shelf-Life</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">Home</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">Features</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">Pricing</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">About</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-green-600 border-b-2 border-green-600 pb-1" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-be-vietnam-pro text-sm font-medium text-slate-600 hover:bg-gray-50 px-4 py-2 rounded-lg transition-all active:scale-95">Login</button>
+<button class="bg-primary-container text-white px-6 py-2 rounded-full font-be-vietnam-pro text-sm font-bold shadow-[0_4px_12px_rgba(34,197,94,0.3)] active:scale-95 transition-all">Sign Up</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 space-y-8">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-4">We're here to help you reduce waste.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Whether you're a home cook or a national grocery chain, our team is ready to support your food conservation journey.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4 p-6 bg-white rounded-[24px] card-shadow hover-lift transition-all border border-gray-100">
+<div class="bg-secondary-container p-3 rounded-xl">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-md font-bold mb-1">WhatsApp Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Instant help for small inquiries and quick tips.</p>
+<button class="flex items-center gap-2 text-green-600 font-bold hover:gap-3 transition-all">
+                                Chat now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 bg-white rounded-[24px] card-shadow hover-lift transition-all border border-gray-100">
+<div class="bg-surface-container-high p-3 rounded-xl">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-md font-bold mb-1">Email Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Detailed technical queries and account help.</p>
+<a class="text-on-surface font-bold hover:text-green-600 transition-all" href="mailto:support@shelf-life.in">support@shelf-life.in</a>
+</div>
+</div>
+</div>
+<div class="p-8 bg-on-background rounded-[24px] text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-h3 text-h3 mb-2">Grocery Partners</h3>
+<p class="font-body-sm text-body-sm opacity-80 mb-6">Scalable inventory management for retail giants and local stores.</p>
+<button class="bg-white text-on-background px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors">Become a Partner</button>
+</div>
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-white p-10 rounded-[24px] border border-gray-100 shadow-2xl shadow-green-500/5">
+<h2 class="font-h2 text-h2 mb-8">Send an Inquiry</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Full Name</label>
+<input class="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-primary transition-all" placeholder="Arjun Mehta" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Email Address</label>
+<input class="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-primary transition-all" placeholder="arjun@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Subject</label>
+<select class="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-primary transition-all">
+<option>Account Assistance</option>
+<option>Business Partnership</option>
+<option>Technical Issue</option>
+<option>Feedback</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Message</label>
+<textarea class="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-primary transition-all" placeholder="How can we help you today?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-green-500/20 active:scale-[0.98] transition-all">Send Message</button>
+</form>
+</div>
+</section>
+<section class="mt-32">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 text-on-surface mb-4">Common Questions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Everything you need to know about shelf tracking.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-white rounded-[24px] border border-gray-100 hover:border-green-200 transition-colors">
+<h3 class="font-h3 text-body-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600">help</span>
+                        How does the expiry notification work?
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Shelf-Life uses advanced predictive algorithms and manual input to track your pantry. We send push notifications 48 hours and 24 hours before an item expires, complete with recipe suggestions.</p>
+</div>
+<div class="p-8 bg-white rounded-[24px] border border-gray-100 hover:border-green-200 transition-colors">
+<h3 class="font-h3 text-body-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600">store</span>
+                        Can I sync my grocery receipts?
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Yes! Our OCR technology supports scanning physical and digital receipts from major Indian retailers like BigBasket, Blinkit, and local supermarkets.</p>
+</div>
+<div class="p-8 bg-white rounded-[24px] border border-gray-100 hover:border-green-200 transition-colors">
+<h3 class="font-h3 text-body-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600">groups</span>
+                        Is there a family sharing plan?
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Absolutely. The Premium tier allows you to share a single kitchen inventory with up to 5 household members, keeping everyone's grocery list in sync.</p>
+</div>
+<div class="p-8 bg-white rounded-[24px] border border-gray-100 hover:border-green-200 transition-colors">
+<h3 class="font-h3 text-body-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600">lock</span>
+                        How secure is my data?
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">We use enterprise-grade AES-256 encryption for all user data. Your consumption habits are used only to improve your experience and are never sold to third parties.</p>
+</div>
+</div>
+</section>
+<section class="mt-32 rounded-[32px] overflow-hidden relative min-h-[400px] flex items-center justify-center">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A brightly lit, organized modern Indian grocery store with high-end wooden shelving and perfectly arranged fresh produce. The scene is shot with a wide-angle lens, showing depth and clean lines. Soft ambient light illuminates the vibrant greens of the vegetables and the earthy tones of the dry goods. The aesthetic is professional, minimalist, and conveys a sense of abundance and precision in retail management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Ha9hm2VroOLYZXe9vFMVTLpqOTkcNT7rGGm8STqG3NRwxSKmIinjfK2BssCzm8aeATea_Gb0P6BtV-m5sIzyJgp_9zXhy-vSComhB-tHUAsyTRjDtSFrQo5s-0D2rPf98edTB2hJEv0DD9pQvsUXCer4J0xdraghXONTgE8DmVnZEGVGcUyn9gFlmqgYmTT0g_gKnEKvbZqjpfiAaLFsKCNgJTghtJVz1JdmiAGEWwCJOQ3eLXJgSpYUQTD0hixl0dpOWOh4wg"/>
+<div class="absolute inset-0 bg-green-950/60 backdrop-blur-[2px]"></div>
+<div class="relative z-10 text-center px-6 max-w-3xl">
+<h2 class="font-h2 text-h1 text-white mb-6">Revolutionizing Retail Waste</h2>
+<p class="font-body-lg text-body-lg text-white/90 mb-8">Join over 500+ grocery outlets using Shelf-Life's enterprise engine to cut down inventory loss by 30%.</p>
+<button class="bg-primary-container text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">Schedule a Demo</button>
+</div>
+</section>
+</main>
+<footer class="bg-slate-50 border-t border-gray-200 w-full py-12 mt-24">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="space-y-4">
+<div class="text-xl font-bold text-slate-900">Shelf-Life</div>
+<p class="font-body-sm text-slate-500 leading-relaxed">© 2024 Shelf-Life. Reducing India's food waste, one kitchen at a time.</p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Partnerships</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Careers</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Support Hub</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Connect</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">Twitter (X)</a></li>
+<li><a class="font-body-sm text-slate-500 hover:text-green-600 hover:translate-x-1 transition-all inline-block" href="#">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

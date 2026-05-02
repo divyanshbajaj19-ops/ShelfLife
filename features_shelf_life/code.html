@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "on-secondary-fixed": "#00210a",
+                    "on-background": "#161d16",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#76231b",
+                    "on-secondary-fixed-variant": "#005323",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#edf6ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3d4a3d",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#4ae176",
+                    "surface-bright": "#f3fcef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2ebde",
+                    "on-primary-fixed-variant": "#005321",
+                    "inverse-surface": "#2a322a",
+                    "surface-container": "#e8f0e4",
+                    "primary": "#006e2f",
+                    "tertiary": "#9e4036",
+                    "surface": "#f3fcef",
+                    "secondary-container": "#92f5a4",
+                    "on-secondary-container": "#007233",
+                    "on-surface": "#161d16",
+                    "primary-fixed": "#6bff8f",
+                    "background": "#f3fcef",
+                    "primary-fixed-dim": "#4ae176",
+                    "on-primary-container": "#004b1e",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#006e2f",
+                    "primary-container": "#22c55e",
+                    "secondary": "#006d30",
+                    "on-primary-fixed": "#002109",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4ddd0",
+                    "on-tertiary-fixed": "#410001",
+                    "outline": "#6d7b6c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bccbb9",
+                    "inverse-on-surface": "#ebf3e7",
+                    "secondary-fixed": "#95f8a7",
+                    "surface-container-highest": "#dce5d9",
+                    "secondary-fixed-dim": "#79db8d",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-variant": "#dce5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "card-gap": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Be Vietnam Pro"],
+                    "h3": ["Be Vietnam Pro"],
+                    "h1": ["Be Vietnam Pro"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .dashboard-card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(34, 197, 94, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/20 glass-nav shadow-sm h-20">
+<div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+<div class="text-2xl font-black tracking-tighter text-slate-900">Shelf-Life</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 hover:text-green-600 transition-colors font-be-vietnam-pro text-sm font-medium tracking-tight" href="#">Home</a>
+<a class="text-green-600 border-b-2 border-green-600 pb-1 font-be-vietnam-pro text-sm font-medium tracking-tight" href="#">Features</a>
+<a class="text-slate-600 hover:text-green-600 transition-colors font-be-vietnam-pro text-sm font-medium tracking-tight" href="#">Pricing</a>
+<a class="text-slate-600 hover:text-green-600 transition-colors font-be-vietnam-pro text-sm font-medium tracking-tight" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-full font-medium text-slate-600 hover:bg-gray-50 transition-all active:scale-95">Login</button>
+<button class="bg-primary-container text-white px-8 py-2.5 rounded-full font-bold shadow-[0_4px_12px_rgba(34,197,94,0.3)] active:scale-95 transition-all">Sign Up</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="text-center max-w-3xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-label-caps mb-6">REVOLUTIONIZING KITCHEN MANAGEMENT</span>
+<h1 class="font-h1 text-h1 text-on-surface mb-6">Smart features for the modern <span class="text-primary">Indian kitchen</span>.</h1>
+<p class="text-body-lg text-on-surface-variant">Shelf-Life adapts to your grocery habits, whether it's the weekly big-basket haul or daily fresh supplies from the local Kirana.</p>
+</div>
+</section>
+<!-- Bento Grid Features -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-card-gap">
+<!-- AI OCR Scanning -->
+<div class="md:col-span-8 dashboard-card p-8 flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+<div class="flex-1">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">document_scanner</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">AI OCR for Kirana Bills</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Snap a photo of your handwritten Kirana slips or supermarket receipts. Our specialized AI extracts items, prices, and quantities automatically.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Recognizes handwritten Devanagari &amp; English
+                            </li>
+<li class="flex items-center gap-3 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Auto-categorizes Dal, Grains, and Spices
+                            </li>
+</ul>
+</div>
+<div class="flex-1 w-full relative">
+<img class="rounded-2xl shadow-xl border border-gray-100 transform rotate-2" data-alt="A clean, minimalist high-angle shot of a fresh paper grocery receipt lying on a light marble kitchen countertop next to a sprig of fresh cilantro. The lighting is bright and airy, following a modern SaaS aesthetic with soft shadows. The overall composition is editorial and sleek, focusing on the simplicity of digitizing physical grocery records." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAheBuiltrn6jGA9eqqpUm07HB9_-BZgFlrSsElwYR6ZB66xIrhvN9egwzPjAu8qx1bizMdvR6HwRbvDeZrxLgnd4BoNOJCl0e1YupbsNcI9laXxAQOOJseQ8EBy-BbO-FGdPawd-7OiG4bqclHaW7kn-PS_hOl4KVLlkhkiyLAdyX67lFvt4w0ro8YJBOHGq8hGJ7eABZ6jECV3nyDIEnQswrgVE8DvthqeODOilWwhXW0lLXswDN0hTGCyi2vJ_Em9OeVR3sCvw"/>
+</div>
+</div>
+<!-- Multi-language Support -->
+<div class="md:col-span-4 dashboard-card p-8 bg-gradient-to-br from-white to-surface-container-low">
+<div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">translate</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">बचत भी, सुविधा भी</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Toggle seamlessly between Hindi and English. Manage your inventory in the language you're most comfortable with.</p>
+<div class="mt-auto pt-6 flex gap-3">
+<span class="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-semibold">हिन्दी</span>
+<span class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold">English</span>
+</div>
+</div>
+<!-- Expiry Tracking -->
+<div class="md:col-span-4 dashboard-card p-8">
+<div class="w-12 h-12 bg-on-tertiary-container/10 rounded-xl flex items-center justify-center mb-6 text-on-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Smart Expiry</h3>
+<p class="text-body-md text-on-surface-variant mb-8">Intelligent alerts for perishables. Get notified 2 days before your milk expires or when the greens start to wilt.</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-error-container/30 rounded-xl">
+<span class="font-medium">Buffalo Milk (500ml)</span>
+<span class="text-xs font-bold text-error bg-error-container px-2 py-1 rounded">Expiring Soon</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-secondary-container/30 rounded-xl">
+<span class="font-medium">Organic Spinach</span>
+<span class="text-xs font-bold text-on-secondary-container bg-secondary-container px-2 py-1 rounded">Fresh</span>
+</div>
+</div>
+</div>
+<!-- Monthly Ration Analytics -->
+<div class="md:col-span-8 dashboard-card p-8 overflow-hidden relative">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Ration Analytics</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Understand your consumption patterns. See how much Basmati rice or Tur Dal your family consumes monthly to plan better.</p>
+<div class="flex gap-4">
+<div class="p-4 bg-surface-bright rounded-2xl border border-outline-variant flex-1">
+<span class="text-label-caps text-on-surface-variant block mb-1">WASTE REDUCED</span>
+<span class="text-h2 text-primary font-black">24%</span>
+</div>
+<div class="p-4 bg-surface-bright rounded-2xl border border-outline-variant flex-1">
+<span class="text-label-caps text-on-surface-variant block mb-1">COST SAVED</span>
+<span class="text-h2 text-primary font-black">₹1,250</span>
+</div>
+</div>
+</div>
+<div class="flex-1">
+<img class="rounded-2xl h-full object-cover" data-alt="A sophisticated data visualization dashboard showing consumption trends for Indian kitchen staples like lentils and flour. The chart is rendered in a minimalist style with soft green and muted grey tones, featuring smooth curves and elegant typography. The setting is clean and high-tech, reflecting a premium SaaS analytical experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxLX-NMT9lDTZ60DQ6yQeb4E44gbKfSikwjv5sseC17NXGhdjMR4X04y8qjhXoVWAsQxtO1O8XvoaBc40y4in6DZPE47pYercasuEWJAjUk7N36N4v3tW2JvzGC2_LXHUB-sVZwWjY0UmHTWCIRkM4TkxrHwdTkmsC2QcdgSJTH2JBBAVuksavtnoJhfiHzHobhYE1UeLoXOYydPenJTT_XpsW6yV67osmDeRqlBu2QGl8Yz1wW1XMuCD2sqJHta6V3dZmx3KFnA"/>
+</div>
+</div>
+</div>
+<!-- Family Shared Inventory -->
+<div class="md:col-span-6 dashboard-card p-8 flex flex-col">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Shared Family Pulse</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Stop duplicate buying. When Dad buys Atta on the way home, the family inventory updates for everyone in real-time.</p>
+<div class="flex -space-x-4 mt-auto">
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Close up portrait of a smiling Indian man." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG_P4qq9A399_FWYOwjsqgC5nMs2AUbJREBnbABzxUDBTB-wfR5qTMAj-Ro5VxaGt_YfgqDZdZW9OQNnXSIPloYFmom1wJsIJcMpnxGsM58KUCWwjmhDk4Q0znVpWKgXYfOStN0YsxTupN768_ff0aPAJS9ChkWcjGyIB3qurYV852HW-sofry1MPW6c2hrR5yFcYpgPldFokjAopIfDFxFJo6OqE4pB79ZVJ56_vKo3QVW58oJ7U-39MVnvOkRcSXM3uoOtY8aA"/>
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Close up portrait of a smiling Indian woman." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS_jy3lm8E9DkW_EdYRch8XaD8mq5xzT5g4yXHBmR6SV8z3Haqof5DSAyzAISym9zVCUETxK5PyZ2yCG9HbAwfBAt61S0FhLf74FIQulo3Tqyc9jnyLbyWWdFfV5ejW6W4hpguahu0oUrN1osDjkDNMcDPEoSfKdepHUcvFM9pJYoaWQtoK3RzqLtvpbYeLYFZGcnO2-sYZ3P6G_Kroqr5jTS9lSjkkPQOadW2MBFlOc2jWZWgcQuStVuhCBuACykaLF0bEFj-HA"/>
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Close up portrait of a young Indian woman." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPs1VSRZygRHIRYcOXfYUTVV9tZiv-r6R0u3bvM7Z-gCXjZnVDQCheSdacTqhxEX3VqZ-BP-pgi7LTIuC7nKmZ89vD738trdMo2imO3e2I6WX4HmKtqB6bZoiN4fLhZEyj8FxjTTqdXARDS0tn0KdY-qK-yqpQhqkj3NYckoYvLcdiazBb2IfWYPAscZvjUCbHbLazrxYEYopARI31YlWvjABJv-r0iK3c2cXfLhMxe38nn3hMC0hA3N9mF1nDKW1wzCt7CXxSlg"/>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold text-sm">+2</div>
+</div>
+</div>
+<!-- Indian Cuisine Recipes -->
+<div class="md:col-span-6 dashboard-card p-8 flex flex-col bg-on-primary text-white overflow-hidden relative" style="background-color: #006e2f;">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">skillet</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Smart Desi Recipes</h3>
+<p class="text-body-md text-white/80 mb-6">Got leftover Paneer and almost-wilting Capsicum? Shelf-Life suggests authentic Indian recipes based on what's currently in your pantry.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/10 rounded-full text-xs">Paneer Jalfrezi</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-xs">Aloo Gobi</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-xs">Mixed Veg Curry</span>
+</div>
+</div>
+<img class="absolute -right-20 -bottom-20 w-80 h-80 object-cover opacity-40 rounded-full" data-alt="A vibrant and appetizing plate of traditional Indian Palak Paneer served with hot butter garlic naan. The colors are rich greens and warm golds, shot in a professional food photography style with shallow depth of field. The lighting is warm and inviting, suggesting a delicious home-cooked meal made from fresh pantry ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMQYYa127i7d_X1aM9jmNFK7SLKagRk7cKcBgHaDskr43g2nHkAL1_xxNJKiocH2Iy6sKRMf41ttAXjgkiyScDBkHC8zZCXaUYMA1s4DUqmbsJtLNsjvP7X2KHbw7IKkIfFfZm969EzDVPU566C3kJX3mOpafQbE3jIFodYg5DFoEidutCelj7Kv5esa515UE0dBow3eVElPjYDYQHoGSSNOq9x1QnAKHvei_MvC0M6i4aPmcyrQivhg2cu-TbR_gXhOTQorKWhw"/>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 mt-32">
+<div class="bg-surface-container rounded-[48px] p-12 md:p-24 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-h1 text-h1 mb-8">Start saving food and money today.</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Join 50,000+ Indian households managing their kitchens more efficiently with Shelf-Life.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl active:scale-95 transition-all">Download for Free</button>
+<button class="bg-white text-on-surface border border-outline-variant px-10 py-4 rounded-full font-bold text-lg active:scale-95 transition-all">Watch Demo</button>
+</div>
+</div>
+<!-- Abstract backgrounds shapes -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/4"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-gray-200 bg-slate-50">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-slate-900 mb-4">Shelf-Life</div>
+<p class="font-be-vietnam-pro text-sm text-slate-500 mb-6">Reducing India's food waste, one kitchen at a time.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-green-600 cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-green-600 cursor-pointer">chat</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-green-600 cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Product</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Features</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Pricing</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Partnerships</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">About Us</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Help Center</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">WhatsApp Support</a></li>
+<li><a class="text-slate-500 hover:text-green-600 transition-colors text-sm" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-200">
+<p class="font-be-vietnam-pro text-sm text-slate-500 text-center">© 2024 Shelf-Life. Reducing India's food waste, one kitchen at a time.</p>
+</div>
+</footer>
+</body></html>

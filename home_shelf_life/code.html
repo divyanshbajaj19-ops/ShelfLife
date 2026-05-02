@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "on-secondary-fixed": "#00210a",
+                    "on-background": "#161d16",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#76231b",
+                    "on-secondary-fixed-variant": "#005323",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#edf6ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3d4a3d",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#4ae176",
+                    "surface-bright": "#f3fcef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2ebde",
+                    "on-primary-fixed-variant": "#005321",
+                    "inverse-surface": "#2a322a",
+                    "surface-container": "#e8f0e4",
+                    "primary": "#006e2f",
+                    "tertiary": "#9e4036",
+                    "surface": "#f3fcef",
+                    "secondary-container": "#92f5a4",
+                    "on-secondary-container": "#007233",
+                    "on-surface": "#161d16",
+                    "primary-fixed": "#6bff8f",
+                    "background": "#f3fcef",
+                    "primary-fixed-dim": "#4ae176",
+                    "on-primary-container": "#004b1e",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#006e2f",
+                    "primary-container": "#22c55e",
+                    "secondary": "#006d30",
+                    "on-primary-fixed": "#002109",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4ddd0",
+                    "on-tertiary-fixed": "#410001",
+                    "outline": "#6d7b6c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bccbb9",
+                    "inverse-on-surface": "#ebf3e7",
+                    "secondary-fixed": "#95f8a7",
+                    "surface-container-highest": "#dce5d9",
+                    "secondary-fixed-dim": "#79db8d",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-variant": "#dce5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "card-gap": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Be Vietnam Pro"],
+                    "h3": ["Be Vietnam Pro"],
+                    "h1": ["Be Vietnam Pro"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-gray-200/50 dark:border-gray-800/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white font-h1">Shelf-Life</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-green-600 dark:text-green-400 border-b-2 border-green-600 pb-1 font-body-sm font-medium" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="#">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="px-6 py-2 rounded-full font-body-sm font-semibold text-slate-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition-all active:scale-95 duration-200">Login</button>
+<button class="px-6 py-2 rounded-full font-body-sm font-semibold bg-primary-container text-on-primary-container shadow-sm hover:shadow-lg transition-all active:scale-95 duration-200">Sign Up</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-caps mb-6">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+                    INDIA'S #1 FOOD MANAGEMENT APP
+                </div>
+<h1 class="font-h1 text-h1 text-slate-900 mb-6 leading-tight">
+                    Track Groceries. <br/>
+<span class="text-primary">Reduce Waste.</span> <br/>
+                    Save Thousands Every Year.
+                </h1>
+<p class="font-body-lg text-body-lg text-slate-600 mb-10 max-w-lg">
+                    AI-powered receipt scanning, expiry reminders, and smart food inventory management built for modern Indian households.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-10 py-4 rounded-full bg-primary text-white font-h3 text-body-md shadow-xl hover:shadow-primary/20 transition-all active:scale-95">Start Free</button>
+<button class="px-10 py-4 rounded-full border-2 border-slate-200 text-slate-900 font-h3 text-body-md flex items-center gap-2 hover:bg-white transition-all active:scale-95">
+<span class="material-symbols-outlined">play_circle</span>
+                        Watch Demo
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px]"></div>
+<div class="relative glass-card rounded-[48px] p-4 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+<img class="rounded-[40px] w-full h-[600px] object-cover shadow-inner" data-alt="A premium high-fidelity mobile app interface displayed on a sleek smartphone. The dashboard shows a vibrant grid of grocery items like paneer, organic tomatoes, and spices with bright green status indicators for freshness. The background is a soft-focus, modern Indian kitchen with white marble countertops and warm pendant lighting. The aesthetic is clean, minimalist, and luxury-oriented, consistent with a high-end SaaS product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTaQ3FEg1N01_gC0L4DnqB-vnqoV7bmlFHYfXSpgiYvq8N4i0ib3XcJn5fTGDsoi0dL7rGB5JSnvWM8s8dlxjbBFIBwXN3FlHj2B7SKq3JplnLG8KFUThtjUhbbgeIb3atwniDW3nlYvVLNLX8GAG2z6EEpP4GCqDilpG48u9LcmBlCYJvrnGX6GTJB47f_xJMr2Qq66pBIcF1EYSEvm_JU0885IziRmNbjgIx6wkDhMKNqiKFi8HBJjL0OZP8qJNMsB9YtT8Djg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Grocery Partners -->
+<section class="py-12 bg-white/50 border-y border-gray-200">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="font-label-caps text-slate-400 mb-8">WORKS SEAMLESSLY WITH</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale opacity-60 hover:grayscale-0 transition-all">
+<span class="text-2xl font-bold font-h2 text-slate-700">BigBasket</span>
+<span class="text-2xl font-bold font-h2 text-slate-700">Blinkit</span>
+<span class="text-2xl font-bold font-h2 text-slate-700">Swiggy Instamart</span>
+<span class="text-2xl font-bold font-h2 text-slate-700">Zepto</span>
+</div>
+</div>
+</section>
+<!-- Savings Calculator (Bento Style) -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<h2 class="font-h1 text-h1 text-center mb-16">Stop Throwing Money <span class="text-primary">In The Bin</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+<div class="md:col-span-2 glass-card rounded-[24px] p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all border-[#E5E7EB]">
+<div>
+<h3 class="font-h2 text-h2 mb-4">Monthly Savings Calculator</h3>
+<p class="font-body-md text-slate-600 mb-8">The average Indian household wastes ₹3,500 monthly on expired groceries. See what you could save.</p>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<div class="flex justify-between font-body-sm font-semibold">
+<span>Monthly Grocery Bill</span>
+<span class="text-primary">₹15,000</span>
+</div>
+<input class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+</div>
+<div class="flex items-center gap-8 bg-surface-container rounded-2xl p-6">
+<div class="flex-1">
+<span class="font-label-caps text-slate-500 block mb-1">POTENTIAL YEARLY SAVINGS</span>
+<span class="text-4xl font-h1 text-primary">₹42,000</span>
+</div>
+<div class="h-16 w-[1px] bg-outline-variant"></div>
+<div class="flex-1">
+<span class="font-label-caps text-slate-500 block mb-1">CO2 REDUCTION</span>
+<span class="text-4xl font-h1 text-secondary">124 kg</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary p-10 rounded-[24px] text-white flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-20 rotate-12">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">savings</span>
+</div>
+<h3 class="font-h2 text-h2 mb-4 relative z-10">Smart Portfolio for your Fridge</h3>
+<p class="font-body-md opacity-90 relative z-10">Think of it as Zerodha for your kitchen. We track entry prices, depreciation (expiry), and maximize ROI on every tomato.</p>
+</div>
+</div>
+</section>
+<!-- Key Features -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div class="max-w-xl">
+<h2 class="font-h1 text-h1 mb-4 text-slate-900">Intelligence in every aisle.</h2>
+<p class="font-body-lg text-slate-600">Our AI doesn't just list items; it understands your consumption patterns.</p>
+</div>
+<div class="hidden md:block">
+<button class="px-8 py-3 rounded-full border border-slate-300 font-body-sm font-semibold hover:bg-white transition-all">Explore All Features</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-card-gap">
+<!-- AI OCR -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#E5E7EB]">
+<div class="p-10">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container">document_scanner</span>
+</div>
+<h3 class="font-h2 text-h2 mb-4">Magic Scan</h3>
+<p class="font-body-md text-slate-600">Snap a photo of your Blinkit or BigBasket bill. Our AI extracts items, prices, and predicted expiry dates in 3 seconds.</p>
+</div>
+<img class="w-full h-64 object-cover" data-alt="A close-up shot of a smartphone scanning a long grocery receipt on a clean kitchen island. The phone screen shows a bright AI overlay with green rectangles highlighting food items like lentils, milk, and eggs, converting them into digital data points. The lighting is crisp and bright, highlighting a fresh, organized kitchen setting in a high-end apartment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-fBv0DVbMKUgxpY6T5IhU3svSRyUeIY94iIAPo-dl1P-Sb8hNAB1WliLfQVmD8LUxTOiEjX7XZVjoH3XRIlVMCFAmyW5s19nviw5nrdq7STJoj5m928xO7aQIHEupX_s63PH4gRBFY3n65yK_ZeWWNolLYVNBtN1Q8tHppiBynZdC7AWfaXhlhsko36A9yw3xr2530DHxGResbbpZctPuTTF09KaR9XgZjFnso1VaFA_mEgPtmsDvYzqxwlpULVAbgg6w967_7Q"/>
+</div>
+<!-- Smart Expiry -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#E5E7EB]">
+<div class="p-10">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-container flex items-center justify-center mb-6 text-on-tertiary-container">
+<span class="material-symbols-outlined">notification_important</span>
+</div>
+<h3 class="font-h2 text-h2 mb-4">Proactive Alerts</h3>
+<p class="font-body-md text-slate-600">Receive WhatsApp nudges 2 days before your milk expires. We even suggest recipes to use up what's about to go bad.</p>
+</div>
+<div class="px-10 pb-10">
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-error-container border border-error/10">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex-1">
+<p class="font-body-sm font-semibold text-on-error-container">Bread expires in 12 hours</p>
+<p class="text-[12px] opacity-70">Suggesting: French Toast Recipe</p>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-white text-error font-label-caps text-[10px]">FIX NOW</button>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-secondary-container/30 border border-secondary/10">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex-1">
+<p class="font-body-sm font-semibold text-on-secondary-container">Paneer is Fresh</p>
+<p class="text-[12px] opacity-70">Expires in 4 days</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-h1 text-h1 mb-4">Loved by 50,000+ Kitchens</h2>
+<p class="font-body-lg text-slate-500">Real stories from real households across India.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+<div class="p-8 rounded-[24px] bg-white border border-gray-100 shadow-sm">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-slate-700 italic mb-8">"Shelf-Life saved us ₹5k in the first month. No more rotting veggies in the bottom drawer of the fridge."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-body-sm font-bold">Priya Sharma</p>
+<p class="text-[12px] text-slate-400">Bangalore</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-[24px] bg-white border border-gray-100 shadow-sm">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-slate-700 italic mb-8">"The receipt scanner is magic. I just snap my Instamart bill and I'm done. Best habit I've started this year."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-body-sm font-bold">Ankit Verma</p>
+<p class="text-[12px] text-slate-400">Mumbai</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-[24px] bg-white border border-gray-100 shadow-sm">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-slate-700 italic mb-8">"Sustainability is important to me. Reducing my food waste feels great, and the savings are a huge bonus!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-body-sm font-bold">Meera Nair</p>
+<p class="text-[12px] text-slate-400">Gurugram</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Preview -->
+<section class="py-24 bg-slate-900 text-white px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-h1 text-h1 mb-4">Start Saving Today</h2>
+<p class="font-body-lg text-slate-400">Choose the plan that fits your household.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<div class="p-10 rounded-[32px] bg-slate-800 border border-slate-700 flex flex-col justify-between">
+<div>
+<h3 class="font-h2 text-h2 mb-2">Free</h3>
+<p class="text-slate-400 mb-8">For single users starting out.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 font-body-sm text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> 50 Items/Month
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> Manual Entry
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> Basic Expiry Alerts
+                            </li>
+</ul>
+</div>
+<button class="w-full py-4 rounded-full border border-slate-600 font-body-sm font-bold hover:bg-slate-700 transition-all">Get Started</button>
+</div>
+<div class="p-10 rounded-[32px] bg-primary-container text-on-primary-container relative overflow-hidden flex flex-col justify-between shadow-2xl">
+<div class="absolute top-6 right-6 px-3 py-1 bg-white/20 rounded-full font-label-caps text-[10px]">MOST POPULAR</div>
+<div>
+<h3 class="font-h2 text-h2 mb-2">Pro</h3>
+<p class="text-on-primary-container/80 mb-8">For families who mean business.</p>
+<div class="mb-8">
+<span class="text-4xl font-h1">₹199</span>
+<span class="font-body-sm opacity-70">/ month</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 font-body-sm">
+<span class="material-symbols-outlined">check_circle</span> Unlimited AI OCR Scans
+                            </li>
+<li class="flex items-center gap-3 font-body-sm">
+<span class="material-symbols-outlined">check_circle</span> WhatsApp Family Shared List
+                            </li>
+<li class="flex items-center gap-3 font-body-sm">
+<span class="material-symbols-outlined">check_circle</span> Advanced Waste Analytics
+                            </li>
+<li class="flex items-center gap-3 font-body-sm">
+<span class="material-symbols-outlined">check_circle</span> Smart Recipe AI
+                            </li>
+</ul>
+</div>
+<button class="w-full py-4 rounded-full bg-slate-900 text-white font-body-sm font-bold shadow-lg hover:shadow-xl transition-all">Go Pro</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-gray-200 dark:border-gray-800 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="space-y-4">
+<div class="text-xl font-bold text-slate-900 dark:text-white">Shelf-Life</div>
+<p class="font-body-sm text-slate-500 dark:text-slate-400">© 2024 Shelf-Life. Reducing India's food waste, one kitchen at a time.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-900 dark:text-white mb-6">Company</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Partnerships</a>
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">About Us</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-900 dark:text-white mb-6">Resources</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Support</a>
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">WhatsApp Support</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-900 dark:text-white mb-6">Legal</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-slate-500 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

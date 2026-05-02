@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "on-secondary-fixed": "#00210a",
+                    "on-background": "#161d16",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#76231b",
+                    "on-secondary-fixed-variant": "#005323",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#edf6ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3d4a3d",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#4ae176",
+                    "surface-bright": "#f3fcef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2ebde",
+                    "on-primary-fixed-variant": "#005321",
+                    "inverse-surface": "#2a322a",
+                    "surface-container": "#e8f0e4",
+                    "primary": "#006e2f",
+                    "tertiary": "#9e4036",
+                    "surface": "#f3fcef",
+                    "secondary-container": "#92f5a4",
+                    "on-secondary-container": "#007233",
+                    "on-surface": "#161d16",
+                    "primary-fixed": "#6bff8f",
+                    "background": "#f3fcef",
+                    "primary-fixed-dim": "#4ae176",
+                    "on-primary-container": "#004b1e",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#006e2f",
+                    "primary-container": "#22c55e",
+                    "secondary": "#006d30",
+                    "on-primary-fixed": "#002109",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4ddd0",
+                    "on-tertiary-fixed": "#410001",
+                    "outline": "#6d7b6c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bccbb9",
+                    "inverse-on-surface": "#ebf3e7",
+                    "secondary-fixed": "#95f8a7",
+                    "surface-container-highest": "#dce5d9",
+                    "secondary-fixed-dim": "#79db8d",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-variant": "#dce5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "card-gap": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Be Vietnam Pro"],
+                    "h3": ["Be Vietnam Pro"],
+                    "h1": ["Be Vietnam Pro"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card-shadow {
+            box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.15);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #22c55e;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background custom-scrollbar">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 border-b border-white/20 glass-nav shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black tracking-tighter text-slate-900">Shelf-Life</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">Home</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">Features</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-green-600 border-b-2 border-green-600 pb-1" href="#">Pricing</a>
+<a class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:text-green-600 transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-be-vietnam-pro text-sm font-medium tracking-tight text-slate-600 hover:bg-gray-50 px-4 py-2 rounded-lg transition-all active:scale-95">Login</button>
+<button class="font-be-vietnam-pro text-sm font-medium tracking-tight bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold shadow-lg shadow-green-500/20 active:scale-95 transition-all">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="text-center mb-16">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps mb-4 uppercase">Pricing Plans</span>
+<h1 class="font-h1 text-h1 text-on-surface mb-6">Invest in a <span class="text-primary">Smarter Kitchen</span></h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Join thousands of Indian households reducing food waste by 40%. Save money, eat fresher, and simplify your grocery cycles.
+            </p>
+<!-- Discount Toggle -->
+<div class="mt-10 flex items-center justify-center gap-4">
+<span class="font-body-md text-on-surface-variant">Monthly</span>
+<button class="w-14 h-7 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-5 h-5 bg-white rounded-full translate-x-7"></div>
+</button>
+<span class="font-body-md text-on-surface">Yearly</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-lg text-body-sm font-bold animate-pulse">Save up to 30%</span>
+</div>
+</section>
+<!-- Pricing Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap mb-section-margin">
+<!-- Free Plan -->
+<div class="bg-white rounded-[24px] p-8 border border-gray-200 premium-card-shadow flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<div class="mb-8">
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Free</h3>
+<p class="text-body-sm text-on-surface-variant">The essential toolkit for mindful individuals.</p>
+</div>
+<div class="mb-8">
+<span class="text-h1 font-h1">₹0</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="text-body-md">Basic food tracking</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="text-body-md">Expiry date reminders</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="text-body-md">Up to 25 items active</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-outline-variant font-bold text-on-surface hover:bg-gray-50 transition-colors active:scale-95">Get Started</button>
+</div>
+<!-- Smart Saver Plan (Popular) -->
+<div class="bg-white rounded-[24px] p-8 border-2 border-primary premium-card-shadow flex flex-col relative transform scale-105 z-10 hover:-translate-y-2 transition-transform duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-label-caps font-label-caps tracking-widest uppercase">Most Popular</div>
+<div class="mb-8">
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Smart Saver</h3>
+<p class="text-body-sm text-on-surface-variant">Advanced tracking for busy households.</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-2">
+<span class="text-h1 font-h1">₹149</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<p class="text-body-sm text-primary font-bold">Save ₹450 annually</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified" data-weight="fill">verified</span>
+<span class="text-body-md font-medium">All Free features</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sync" data-weight="fill">sync</span>
+<span class="text-body-md">Real-time family sync</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active" data-weight="fill">notifications_active</span>
+<span class="text-body-md">Advanced alert scheduling</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="barcode_scanner" data-weight="fill">barcode_scanner</span>
+<span class="text-body-md">Unlimited barcode scans</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-primary text-white font-bold shadow-lg shadow-green-500/30 hover:brightness-110 transition-all active:scale-95">Choose Smart Saver</button>
+</div>
+<!-- Premium Family Plan -->
+<div class="bg-slate-900 rounded-[24px] p-8 border border-slate-800 flex flex-col text-white hover:-translate-y-1 transition-transform duration-300 shadow-2xl shadow-slate-900/40">
+<div class="mb-8">
+<h3 class="font-h3 text-h3 mb-2">Premium Family</h3>
+<p class="text-body-sm text-slate-400">The ultimate AI-powered kitchen manager.</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-2">
+<span class="text-h1 font-h1">₹299</span>
+<span class="text-slate-400">/month</span>
+</div>
+<p class="text-body-sm text-secondary font-bold">Save ₹1,100 annually</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome" data-weight="fill">auto_awesome</span>
+<span class="text-body-md font-medium">AI predictive consumption</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="shopping_cart" data-weight="fill">shopping_cart</span>
+<span class="text-body-md">BigBasket &amp; Blinkit sync</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="recipe" data-weight="fill">cooking</span>
+<span class="text-body-md">AI-generated recipes from leftovers</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="groups" data-weight="fill">groups</span>
+<span class="text-body-md">Up to 6 family members</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-secondary-container text-on-secondary-container font-bold hover:brightness-110 transition-all active:scale-95">Go Premium</button>
+</div>
+</div>
+<!-- Comparison Bento Grid -->
+<section class="mt-24">
+<h2 class="font-h2 text-h2 text-center mb-12">Compare features in detail</h2>
+<div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm">
+<div class="grid grid-cols-4 p-8 border-b border-gray-100 bg-slate-50/50 font-bold">
+<div class="col-span-1">Features</div>
+<div class="text-center">Free</div>
+<div class="text-center text-primary">Smart Saver</div>
+<div class="text-center">Premium</div>
+</div>
+<!-- Feature Row 1 -->
+<div class="grid grid-cols-4 p-8 border-b border-gray-50 items-center">
+<div class="col-span-1">
+<p class="font-bold">Item Limit</p>
+<p class="text-body-sm text-on-surface-variant">Active items in inventory</p>
+</div>
+<div class="text-center font-medium">25 Items</div>
+<div class="text-center font-bold text-primary">Unlimited</div>
+<div class="text-center font-medium">Unlimited</div>
+</div>
+<!-- Feature Row 2 -->
+<div class="grid grid-cols-4 p-8 border-b border-gray-50 items-center">
+<div class="col-span-1">
+<p class="font-bold">Family Sharing</p>
+<p class="text-body-sm text-on-surface-variant">Collaborate with household</p>
+</div>
+<div class="text-center text-on-surface-variant">—</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<!-- Feature Row 3 -->
+<div class="grid grid-cols-4 p-8 border-b border-gray-50 items-center">
+<div class="col-span-1">
+<p class="font-bold">AI Analytics</p>
+<p class="text-body-sm text-on-surface-variant">Predict waste patterns</p>
+</div>
+<div class="text-center text-on-surface-variant">—</div>
+<div class="text-center text-on-surface-variant">—</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<!-- Feature Row 4 -->
+<div class="grid grid-cols-4 p-8 items-center">
+<div class="col-span-1">
+<p class="font-bold">App Integrations</p>
+<p class="text-body-sm text-on-surface-variant">Sync with grocery apps</p>
+</div>
+<div class="text-center text-on-surface-variant">—</div>
+<div class="text-center text-on-surface-variant">Manual Only</div>
+<div class="text-center font-bold text-primary">Auto-Sync</div>
+</div>
+</div>
+</section>
+<!-- Visual Credibility Section -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="rounded-[32px] overflow-hidden bg-slate-200 h-[400px]">
+<img class="w-full h-full object-cover" data-alt="A brightly lit, modern Indian kitchen with high-end stainless steel appliances and organized wooden shelves. The scene is filled with natural sunlight streaming through a large window, highlighting fresh organic produce like vibrant bell peppers and leafy greens. The aesthetic is clean, minimalist, and aspirational, using a palette of soft whites and natural wood tones to evoke a sense of professional domestic organization and culinary precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDBj2gEQ-kunA-t79db8QpG5c3wLvCJQmL7IO-7Xd3twur3a_Vg3vf2d8rm4rsjQSM3wM92E4ESJLGSfvBQ531i5I7JVtJwKO-Yla3vsPEJjdWceglwvrDMLxwM0MacNGOCiGkTQ1H99-mbFRKl4gifNd9M-ITlB58mEYppzwddAOL7xCH1aegiPr42agwb9esk5yF-FzACOSj4FaM3TEiMklPTszl-9Hz1fP6N-0r8m3dcts389zdpqvRaGjHPqtIZOBe3-s4pA"/>
+</div>
+<div>
+<h2 class="font-h2 text-h2 mb-6">Why upgrade to a paid plan?</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="savings" data-weight="fill">savings</span>
+</div>
+<div>
+<p class="font-h3 text-body-lg mb-1">Save ₹2,000+ per month</p>
+<p class="text-on-surface-variant">Our users report saving thousands by reducing accidental double-purchases and food spoilage.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="eco" data-weight="fill">eco</span>
+</div>
+<div>
+<p class="font-h3 text-body-lg mb-1">Eco-Conscious Lifestyle</p>
+<p class="text-on-surface-variant">Premium members reduce their household carbon footprint by up to 30% through optimized consumption.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-12 border-t border-gray-200 bg-slate-50">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-bold text-slate-900 mb-4 block">Shelf-Life</span>
+<p class="font-be-vietnam-pro text-sm text-slate-500 leading-relaxed">
+                    © 2024 Shelf-Life. Reducing India's food waste, one kitchen at a time.
+                </p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900">Product</h4>
+<ul class="space-y-2">
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Features</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-green-600 font-semibold" href="#">Pricing</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Integrations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900">Company</h4>
+<ul class="space-y-2">
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">About</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Partnerships</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Support</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-slate-500 hover:text-green-600 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-be-vietnam-pro text-sm text-green-600 hover:translate-x-1 transition-transform inline-flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span> WhatsApp Support
+                    </a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>
