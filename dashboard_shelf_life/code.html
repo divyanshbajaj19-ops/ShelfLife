@@ -134,9 +134,9 @@
                     href="#">About</a>
             </div>
             <div class="flex items-center gap-4">
-                <button
+                <button id="nav-login-btn"
                     class="text-slate-600 hover:bg-gray-50 px-4 py-2 rounded-lg transition-all active:scale-95 duration-200 ease-in-out font-medium">Login</button>
-                <button
+                <button id="nav-signup-btn"
                     class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-bold shadow-[0_4px_12px_rgba(34,197,94,0.3)] active:scale-95 transition-all">Sign
                     Up</button>
             </div>
@@ -523,6 +523,149 @@
     </footer>
 
 
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="hidden fixed inset-0 bg-black/50 z-[100] flex items-center justify-center backdrop-blur-sm">
+        <div class="glass-card bg-white p-8 rounded-2xl w-full max-w-md relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h2 id="auth-title" class="text-2xl font-bold mb-6 text-center text-slate-900">Login to Shelf-Life</h2>
+            
+            <div id="auth-error" class="hidden mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm"></div>
+            <div id="auth-success" class="hidden mb-4 p-3 bg-green-100 text-green-700 rounded-lg text-sm"></div>
+
+            <form id="auth-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="auth-email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none text-slate-900 bg-white">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="auth-password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none text-slate-900 bg-white">
+                </div>
+                <button type="submit" id="auth-submit" class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:brightness-110 transition-colors">
+                    Login
+                </button>
+            </form>
+            <p class="mt-4 text-center text-sm text-gray-600">
+                <span id="auth-switch-text">Don't have an account?</span>
+                <button id="switch-auth-mode" class="text-primary font-bold hover:underline">Sign Up</button>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabaseUrl = 'https://eekpybvlcpvwluxqfzsx.supabase.co';
+        const supabaseKey = 'sb_publishable_QkP3goJTdD6UJUi7-MoDMg_CYvzdyzi';
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // UI Elements
+        const authModal = document.getElementById('auth-modal');
+        const closeModal = document.getElementById('close-modal');
+        const authForm = document.getElementById('auth-form');
+        const authTitle = document.getElementById('auth-title');
+        const authSubmit = document.getElementById('auth-submit');
+        const switchAuthMode = document.getElementById('switch-auth-mode');
+        const authSwitchText = document.getElementById('auth-switch-text');
+        const authError = document.getElementById('auth-error');
+        const authSuccess = document.getElementById('auth-success');
+        
+        const loginBtn = document.getElementById('nav-login-btn');
+        const signupBtn = document.getElementById('nav-signup-btn');
+
+        let isLogin = true;
+
+        function openModal(mode) {
+            isLogin = mode === 'login';
+            authTitle.innerText = isLogin ? 'Login to Shelf-Life' : 'Sign Up for Shelf-Life';
+            authSubmit.innerText = isLogin ? 'Login' : 'Sign Up';
+            authSwitchText.innerText = isLogin ? "Don't have an account?" : "Already have an account?";
+            switchAuthMode.innerText = isLogin ? 'Sign Up' : 'Login';
+            authError.classList.add('hidden');
+            authSuccess.classList.add('hidden');
+            authForm.reset();
+            authModal.classList.remove('hidden');
+        }
+
+        if (loginBtn) loginBtn.addEventListener('click', (e) => { e.preventDefault(); openModal('login'); });
+        if (signupBtn) signupBtn.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            if(signupBtn.innerText === 'Log Out') {
+                supabaseClient.auth.signOut().then(() => window.location.reload());
+            } else {
+                openModal('signup'); 
+            }
+        });
+        
+        closeModal.addEventListener('click', () => authModal.classList.add('hidden'));
+        
+        switchAuthMode.addEventListener('click', () => openModal(isLogin ? 'signup' : 'login'));
+
+        authForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            authError.classList.add('hidden');
+            authSuccess.classList.add('hidden');
+            authSubmit.disabled = true;
+            authSubmit.innerText = 'Processing...';
+
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            try {
+                let error;
+                if (isLogin) {
+                    const { error: signInError } = await supabaseClient.auth.signInWithPassword({ email, password });
+                    error = signInError;
+                } else {
+                    const { error: signUpError } = await supabaseClient.auth.signUp({ email, password });
+                    error = signUpError;
+                    if (!error) {
+                        authSuccess.innerText = 'Sign up successful! Please check your email to verify (if enabled) or log in.';
+                        authSuccess.classList.remove('hidden');
+                    }
+                }
+
+                if (error) throw error;
+
+                if (isLogin) {
+                    authModal.classList.add('hidden');
+                    checkSession();
+                }
+            } catch (error) {
+                authError.innerText = error.message;
+                authError.classList.remove('hidden');
+            } finally {
+                authSubmit.disabled = false;
+                if (!isLogin && !authError.classList.contains('hidden')) {
+                    authSubmit.innerText = 'Sign Up';
+                } else {
+                    authSubmit.innerText = isLogin ? 'Login' : 'Sign Up';
+                }
+            }
+        });
+
+        // Handle Active Session
+        async function checkSession() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                if(loginBtn) loginBtn.classList.add('hidden');
+                if(signupBtn) {
+                    signupBtn.innerText = 'Log Out';
+                    signupBtn.classList.replace('bg-primary', 'bg-error'); // Change button style to logout
+                }
+                
+                // Personalize dashboard greeting
+                const h1 = document.querySelector('main h1');
+                if(h1 && session.user.email) {
+                    const username = session.user.email.split('@')[0];
+                    h1.innerText = `Namaste, ${username.charAt(0).toUpperCase() + username.slice(1)}`;
+                }
+            }
+        }
+        
+        checkSession();
+    </script>
 </body>
 
 </html>
