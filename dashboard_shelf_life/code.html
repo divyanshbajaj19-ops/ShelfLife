@@ -115,7 +115,27 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        /* Hide page content until session check completes */
+        body { visibility: hidden; }
     </style>
+
+    <!-- Route Guard: redirect to home if not logged in -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        (async () => {
+            const _guard = supabase.createClient(
+                'https://eekpybvlcpvwluxqfzsx.supabase.co',
+                'sb_publishable_QkP3goJTdD6UJUi7-MoDMg_CYvzdyzi'
+            );
+            const { data: { session } } = await _guard.auth.getSession();
+            if (!session) {
+                window.location.replace('index.html');
+            } else {
+                document.body.style.visibility = 'visible';
+            }
+        })();
+    </script>
 </head>
 
 <body class="bg-background font-body-md text-on-background">
@@ -554,8 +574,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
+    // Note: Supabase is already loaded by the route guard above
         const supabaseUrl = 'https://eekpybvlcpvwluxqfzsx.supabase.co';
         const supabaseKey = 'sb_publishable_QkP3goJTdD6UJUi7-MoDMg_CYvzdyzi';
         const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
@@ -629,6 +649,7 @@
                 if (error) throw error;
 
                 if (isLogin) {
+                    // Already logged in — just refresh the nav state
                     authModal.classList.add('hidden');
                     checkSession();
                 }
@@ -645,22 +666,28 @@
             }
         });
 
-        // Handle Active Session
+        // Handle Active Session UI
         async function checkSession() {
             const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
-                if(loginBtn) loginBtn.classList.add('hidden');
+                if(loginBtn) loginBtn.style.display = 'none';
                 if(signupBtn) {
                     signupBtn.innerText = 'Log Out';
-                    signupBtn.classList.replace('bg-primary', 'bg-error'); // Change button style to logout
+                    signupBtn.style.background = '#ba1a1a';
+                    signupBtn.onclick = (e) => {
+                        e.preventDefault();
+                        supabaseClient.auth.signOut().then(() => window.location.replace('index.html'));
+                    };
                 }
-                
                 // Personalize dashboard greeting
                 const h1 = document.querySelector('main h1');
                 if(h1 && session.user.email) {
                     const username = session.user.email.split('@')[0];
                     h1.innerText = `Namaste, ${username.charAt(0).toUpperCase() + username.slice(1)}`;
                 }
+            } else {
+                // No session — guard should have caught this, but redirect just in case
+                window.location.replace('index.html');
             }
         }
         
