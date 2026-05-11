@@ -153,6 +153,8 @@
                     href="pricing.html">Pricing</a>
                 <a class="text-slate-600 hover:text-green-600 transition-colors font-be-vietnam-pro text-sm font-medium tracking-tight"
                     href="about.html">About</a>
+<a id="nav-dashboard-link" class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" style="display: none;" href="dashboard.html">Dashboard</a>
+
             </div>
             <div class="flex items-center gap-4">
                 <button id="nav-login-btn"
@@ -381,43 +383,6 @@
                     class="mt-6 w-full py-3 border-2 border-dashed border-primary/30 rounded-xl text-primary font-bold hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined">upload</span> Upload New
                 </button>
-            </div>
-            <!-- Family Inventory Status -->
-            <div class="md:col-span-4 glass-card p-8 rounded-[24px]">
-                <h3 class="font-h3 text-h3 mb-6">Family Units</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4">
-                        <img alt="Rahul" class="w-12 h-12 rounded-full border-2 border-primary"
-                            data-alt="A close-up portrait of a young Indian man with a friendly expression, set against a blurred outdoor background. The lighting is warm and natural, creating a soft and approachable atmosphere. The overall style is clean and modern, consistent with a high-end tech platform user profile."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZZQw8RgYqmkwJ062yJr78tNK5MEJcJw3DBHdHqwqhQEsxBdEofU1BArgyzqoVef2OGaf3pqAyP9miEtE4YjxnHPiB31ep4JRMB6Sc0wlIxTQKYZT48IATKsgJEA5Z50DEhTYZexO-iiazMmdgeMK9abrho0feAnMM1wpB7RnUj6W0I6z_WCVxvPVyJ9jesdCK1tf67jh9sB2mJzHZ4YpKze7Nwl47grc5qiWupCarFDrEI_3Iop6mMAq7bOP7Yi6VQKIG-TO1gw">
-                        <div class="flex-1">
-                            <div class="flex justify-between mb-1">
-                                <span class="font-bold">Vansh </span>
-                                <span class="text-body-sm text-primary">8 Active</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-surface-container-high rounded-full">
-                                <div class="w-4/5 h-full bg-primary rounded-full"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <img alt="Priya" class="w-12 h-12 rounded-full border-2 border-secondary"
-                            data-alt="A professional headshot of a young Indian woman with a confident smile, wearing a subtle business-casual outfit. The image has a clean, minimalist aesthetic with soft, high-key studio lighting. The background is a solid, neutral color that complements the modern UI design system."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdTJcUkNxjoOf4err6AvlGbE632K7G9z2Zo8lGXkBYTh6bMO2-TtO0jVN2iMSn8YrDVCphHlgyMfbnlr4vzA5Oggmi4TcVYLTvRSv_dn7lbjvtvLpqam3PonwA3vH4uev9QKxwDVKE8Vf-rvIMb0BT5YnNPwnpRS0aR0_VSpGH-1tcyxYBlrDawDRCN2tBtRTXjSe9CSv8Cqxw6fGS0hmiInCytRLzw-xFFslwrsVb74n9pvGIchw2ksociJyDrjXYBZbiWR6rnQ">
-                        <div class="flex-1">
-                            <div class="flex justify-between mb-1">
-                                <span class="font-bold">Shreya </span>
-                                <span class="text-body-sm text-secondary">15 Active</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-surface-container-high rounded-full">
-                                <div class="w-full h-full bg-secondary rounded-full"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button
-                    class="mt-8 w-full py-2 bg-surface-container text-on-surface-variant rounded-lg font-semibold hover:bg-surface-container-high transition-all">Manage
-                    Household</button>
             </div>
             <!-- Indian Recipe Recommendations -->
             <div class="md:col-span-12 glass-card p-8 rounded-[24px]">
@@ -747,6 +712,8 @@
                         supabaseClient.auth.signOut().then(() => window.location.replace('index.html'));
                     };
                 }
+                const dashLink = document.getElementById('nav-dashboard-link');
+                if (dashLink) dashLink.style.display = 'block';
                 // Personalize dashboard greeting
                 const h1 = document.querySelector('main h1');
                 if(h1 && session.user.email) {

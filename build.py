@@ -109,6 +109,8 @@ AUTH_BLOCK = """
                     signupBtn.style.background = '#ba1a1a';
                     signupBtn.onclick = () => _supabase.auth.signOut().then(() => location.reload());
                 }
+                const dashLink = document.getElementById('nav-dashboard-link');
+                if (dashLink) dashLink.style.display = 'block';
                 const h1 = document.querySelector('main h1');
                 if (h1 && session.user.email) {
                     const u = session.user.email.split('@')[0];
@@ -138,6 +140,13 @@ for folder, out_file in pages.items():
     content = re.sub(r'href="[^"]*"([^>]*>Pricing</a>)', r'href="pricing.html"\1', content, flags=re.IGNORECASE)
     content = re.sub(r'href="[^"]*"([^>]*>About</a>)', r'href="about.html"\1', content, flags=re.IGNORECASE)
     content = re.sub(r'href="[^"]*"([^>]*>Contact</a>)', r'href="contact.html"\1', content, flags=re.IGNORECASE)
+
+    # Insert Dashboard link after About link
+    content = re.sub(
+        r'(<a[^>]*href="about\.html"[^>]*>About</a>)',
+        r'\1\n<a id="nav-dashboard-link" class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" style="display: none;" href="dashboard.html">Dashboard</a>',
+        content, flags=re.IGNORECASE
+    )
 
     # Link the brand logo text to home
     content = re.sub(r'(<div[^>]*>)\s*Shelf-Life\s*(</div>)', r'\1<a href="index.html" style="text-decoration:none;color:inherit;">Shelf-Life</a>\2', content)

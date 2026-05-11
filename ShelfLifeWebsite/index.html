@@ -117,6 +117,7 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="features.html">Features</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="pricing.html">Pricing</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" href="about.html">About</a>
+<a id="nav-dashboard-link" class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-body-sm font-medium" style="display: none;" href="dashboard.html">Dashboard</a>
 </div>
 <div class="flex items-center space-x-4">
 <button id="nav-login-btn" class="px-6 py-2 rounded-full font-body-sm font-semibold text-slate-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition-all active:scale-95 duration-200">Login</button>
@@ -501,6 +502,8 @@
                     signupBtn.style.background = '#ba1a1a';
                     signupBtn.onclick = () => _supabase.auth.signOut().then(() => location.reload());
                 }
+                const dashLink = document.getElementById('nav-dashboard-link');
+                if (dashLink) dashLink.style.display = 'block';
                 const h1 = document.querySelector('main h1');
                 if (h1 && session.user.email) {
                     const u = session.user.email.split('@')[0];
